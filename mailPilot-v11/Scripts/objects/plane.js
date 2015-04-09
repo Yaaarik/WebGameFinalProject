@@ -6,7 +6,7 @@ var objects;
         function Plane(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "actor");
+            this.image = new createjs.Sprite(managers.Assets.heroAtlas, "normalShip");
             //this.image.x = 100;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;

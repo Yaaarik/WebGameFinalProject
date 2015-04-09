@@ -3,7 +3,7 @@ var managers;
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.gif" },
-        { id: "sky", src: "assets/images/sky1.png" },
+        { id: "sky", src: "assets/images/background.png" },
         { id: "engine", src: "assets/sounds/bgm.mp3" },
         { id: "playBGM", src: "assets/sounds/playBGM.mp3" },
         { id: "thunder", src: "assets/sounds/shot2.wav" },
@@ -14,6 +14,44 @@ var managers;
         { id: "lose", src: "assets/sounds/lose.mp3" },
         { id: "game-over", src: "assets/sounds/game-over.wav" }
     ];
+
+    var heroData = {
+        "images": ["assets/images/jiheheheheh.png"],
+        "frames": [
+
+            [14, 0, 238, 124],
+            [14, 130, 238, 124],
+            [14, 259, 238, 124]
+        ],
+        "animations": {
+
+            "normalShip": {
+                frames: [0, 1, 2],
+                speed: 0.1,
+            }
+        }
+
+    };
+
+
+    var enemyData = {
+        "images": ["assets/images/jiheheheheh.png"],
+        "frames": [
+
+            [14, 0, 238, 124],
+            [14, 130, 238, 124],
+            [14, 259, 238, 124]
+        ],
+        "animations": {
+
+            "normalShip": {
+                frames: [0, 1, 2],
+                speed: 0.1,
+            }
+        }
+
+    };
+
     var spriteSheetData = {
         "images": ["assets/images/atlas1.png"],
         "frames": [
@@ -51,26 +89,7 @@ var managers;
             "boss": [14]
         }
     };
-    // SpriteSheet Data Object
-    /*var spriteSheetData = {
-        "images": ["assets/images/atlas1.png"],
-        "frames": [
-            [2, 2, 226, 178],
-            [230, 2, 211, 69],
-            [443, 69, 62, 63],
-            [443, 2, 65, 65],
-            [230, 73, 211, 69],
-            [230, 144, 211, 69]
-        ],
-        "animations": {
-            "cloud": [0],
-            "instructionsButton": [1],
-            "island": [2],
-            "plane": [3],
-            "playButton": [4],
-            "tryAgainButton": [5]
-        }
-    }*/
+ 
     // Asset Manager Class
     var Assets = (function () {
         function Assets() {
@@ -81,6 +100,7 @@ var managers;
             this.loader.installPlugin(createjs.Sound);
             this.loader.loadManifest(assetManifest);
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
+            this.heroAtlas = new createjs.SpriteSheet(heroData);
         };
         return Assets;
     })();
